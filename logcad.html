@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+      <link rel="stylesheet" href="css/form.style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Formulário</title>
+</head>
+<body>
+  <header>
+    <div><strong>EcoTrace</strong></div>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="login_cadastro.html">Login</a>
+      <a href="#contato">Downloads</a>
+    </nav>
+  </header>
+<body>
+ 
+  <div class="wrapper">
+    <div class="forms" id="forms">
+     
+      <!-- Tela de Login -->
+      <div class="container active" id="loginBox">
+        <img src="../static/images/logo secureup.png">
+        <h2>Login</h2>
+        <form action="{{ url_for('logar') }}" method="POST">
+          <input type="text" name="usuario" placeholder="Usuário" class="input-field" required minlength="3">
+         
+          <div class="input-group">
+            <input type="password" name="senha" placeholder="Senha (mín. 6 caracteres)" class="input-field senha" required minlength="6">
+            <span class="toggle-password">👁️</span>
+          </div>
+         
+          <button type="submit" class="btn">Entrar</button>
+        </form>
+      </div>
+ 
+      <!-- Tela de Cadastro -->
+      <div class="container" id="cadastroBox">
+        <h2>Cadastrar Usuário</h2>
+        <form action="{{ url_for('cadastrar') }}" method="POST">
+          <input type="text" name="nome" placeholder="Nome completo" class="input-field" required minlength="3">
+          <input type="email" name="email" placeholder="E-mail" class="input-field" required>
+          <input type="text" name="usuario" placeholder="Usuário" class="input-field" required minlength="3">
+ 
+          <div class="input-group">
+            <input type="password" name="senha" placeholder="Senha (mín. 6 caracteres)" class="input-field senha" required minlength="6">
+            <span class="toggle-password">👁️</span>
+          </div>
+ 
+          <button type="submit" class="btn">Cadastrar</button>
+        </form>
+        <span class="link" id="toLogin">Já tem conta? Faça login</span>
+      </div>
+ 
+    </div>
+  </div>
+ 
+  <script>
+    const forms = document.getElementById("forms");
+    const loginBox = document.getElementById("loginBox");
+    const cadastroBox = document.getElementById("cadastroBox");
+ 
+    const toCadastro = document.getElementById("toCadastro");
+    const toLogin = document.getElementById("toLogin");
+ 
+    toCadastro.addEventListener("click", () => {
+      forms.style.transform = "translateX(-50%)";
+      loginBox.classList.remove("active");
+      cadastroBox.classList.add("active");
+    });
+ 
+    toLogin.addEventListener("click", () => {
+      forms.style.transform = "translateX(0%)";
+      cadastroBox.classList.remove("active");
+      loginBox.classList.add("active");
+    });
+ 
+    // Mostrar/ocultar senha
+    document.querySelectorAll(".toggle-password").forEach(toggle => {
+      toggle.addEventListener("click", () => {
+        const input = toggle.previousElementSibling;
+        if (input.type === "password") {
+          input.type = "text";
+          toggle.textContent = "🙈";
+        } else {
+          input.type = "password";
+          toggle.textContent = "👁️";
+        }
+      });
+    });
+ 
+    // Validação extra
+    document.querySelectorAll("form").forEach(form => {
+      form.addEventListener("submit", (e) => {
+        if (!form.checkValidity()) {
+          e.preventDefault();
+          alert("Por favor, preencha todos os campos corretamente!");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
