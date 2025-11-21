@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+      <link rel="stylesheet" href="form.style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Formulário</title>
+</head>
+<body>
+  <header>
+    <div><strong>EcoTrace</strong></div>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="login_cadastro.html">Login</a>
+      <a href="#contato">Downloads</a>
+    </nav>
+  </header>
+
+<body>
+  <main>
+ <br><br> <br><br> 
+
+
+ 
+    <form id="formulario" action="#" method="post" novalidate>
+      
+      <fieldset class="active">
+        <legend>1. Nível de Prioridade</legend>
+
+        <p>O quão voltada à Sustentabilidade sua empresa é?</p>
+
+        <label><input type="radio" name="sustentabilidade" value="0"> 0 - Não é voltada</label><br>
+        <label><input type="radio" name="sustentabilidade" value="1"> 1 - Pequeno foco</label><br>
+        <label><input type="radio" name="sustentabilidade" value="2"> 2 - Procedimento padrão</label><br>
+        <label><input type="radio" name="sustentabilidade" value="3"> 3 - Prioriza</label><br>
+        <label><input type="radio" name="sustentabilidade" value="4"> 4 - Forte pilar</label><br>
+        <label><input type="radio" name="sustentabilidade" value="5"> 5 - Totalmente voltada</label><br><br>
+
+       <button id="ant" type="button" onclick="prevStep()">Anterior</button>
+        <button id="pro" type="button" onclick="nextStep()">Próximo</button>
+      </fieldset>
+
+      <!-- PERGUNTA 2 -->
+      <fieldset>
+        <legend>2. Energia</legend>
+
+        <p>Qual é a principal fonte de energia da sua Empresa?</p>
+
+        <label><input type="radio" name="energia" value="0"> 0 - Fontes Não Renováveis</label><br>
+        <label><input type="radio" name="energia" value="1"> 1 - Majoritariamente Não Renovável</label><br>
+        <label><input type="radio" name="energia" value="2"> 2 - Híbrido</label><br>
+        <label><input type="radio" name="energia" value="3"> 3 - Majoritariamente Renovável</label><br>
+        <label><input type="radio" name="energia" value="4"> 4 - Fontes Renováveis</label><br>
+        <label><input type="radio" name="energia" value="5"> 5 - Não definido</label><br><br>
+
+
+        <button id="ant" type="button" onclick="prevStep()">Anterior</button>
+        <button id="pro" type="button" onclick="nextStep()">Próximo</button>
+      </fieldset>
+
+       <!-- PERGUNTA 3 -->
+      <fieldset>
+        <legend>3. Água</legend>
+
+        <p>Há monitoramento regular do consumo de água na produção?</p>
+
+        <label><input type="radio" name="agua" value="0"> 0 - Não há monitoramento</label><br>
+        <label><input type="radio" name="agua" value="1"> 1 - Fraco</label><br>
+        <label><input type="radio" name="agua" value="2"> 2 - Regular</label><br>
+        <label><input type="radio" name="agua" value="3"> 3 - Forte</label><br>
+        <label><input type="radio" name="agua" value="4"> 4 - Prioridade</label><br>
+        <label><input type="radio" name="agua" value="5"> 5 - Avançado</label><br><br>
+
+        <button id="ant" type="button" onclick="prevStep()">Anterior</button>
+        <button id="pro" type="button" onclick="nextStep()">Próximo</button>
+      </fieldset>
+
+      <!-- PERGUNTA 4 (NOVA) -->
+      <fieldset>
+        <legend>4. Resíduos</legend>
+
+        <p>Como é feito o gerenciamento dos resíduos gerados pela produção?</p>
+
+        <label><input type="radio" name="residuos" value="0"> 0 - Não há gestão</label><br>
+        <label><input type="radio" name="residuos" value="1"> 1 - Descarte básico</label><br>
+        <label><input type="radio" name="residuos" value="2"> 2 - Reciclagem parcial</label><br>
+        <label><input type="radio" name="residuos" value="3"> 3 - Plano estruturado</label><br>
+        <label><input type="radio" name="residuos" value="4"> 4 - Reuso e otimização</label><br>
+        <label><input type="radio" name="residuos" value="5"> 5 - Sistema completo e monitorado</label><br><br>
+
+       <button id="ant" type="button" onclick="prevStep()">Anterior</button>
+        <button id="pro" type="button" onclick="nextStep()">Próximo</button>
+      </fieldset>
+
+      <!-- PERGUNTA 5 (NOVA) -->
+      <fieldset>
+        <legend>5. Emissões Atmosféricas</legend>
+
+        <p>A empresa controla e reduz as emissões de gases poluentes?</p>
+
+        <label><input type="radio" name="emissoes" value="0"> 0 - Não há controle</label><br>
+        <label><input type="radio" name="emissoes" value="1"> 1 - Monitoramento esporádico</label><br>
+        <label><input type="radio" name="emissoes" value="2"> 2 - Controle básico</label><br>
+        <label><input type="radio" name="emissoes" value="3"> 3 - Sistema de filtragem</label><br>
+        <label><input type="radio" name="emissoes" value="4"> 4 - Redução ativa de poluentes</label><br>
+        <label><input type="radio" name="emissoes" value="5"> 5 - Gestão avançada e certificada</label><br><br>
+
+        <button id="ant" type="button" onclick="prevStep()">Anterior</button>
+        <button id="pro" type="button" onclick="nextStep()">Próximo</button>
+      </fieldset>
+
+    </form>
+  </main>
+  <footer>
+    © 2025 EcoTrace — Tecnologia e Sustentabilidade
+  </footer>
+</body>
+</html>
+
+
+  <script>
+    let passoAtual = 0;
+    const etapas = document.querySelectorAll("fieldset");
+
+    function mostrarEtapa() {
+      etapas.forEach((etapa, i) => {
+        etapa.classList.toggle("active", i === passoAtual);
+      });
+    }
+
+    function nextStep() {
+      if (passoAtual < etapas.length - 1) {
+        passoAtual++;
+        mostrarEtapa();
+      }
+    }
+
+    function prevStep() {
+      if (passoAtual > 0) {
+        passoAtual--;
+        mostrarEtapa();
+      } else {
+        alert("Você já está na primeira pergunta!");
+      }
+    }
+
+
+
+  </script>
+
+</body>
+</html>

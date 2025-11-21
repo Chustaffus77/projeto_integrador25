@@ -1,0 +1,253 @@
+/* ===== Estilo Geral ===== */
+body {
+  background: #03241E;
+  color: white;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ===== Header ===== */
+header {
+  background-color: #364259;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header nav a {
+  margin: 0 12px;
+  text-decoration: none;
+  color: #dffff4;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+header nav a:hover {
+  color: #00ffa7;
+}
+
+/* ===== MAIN ===== */
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 40px 15px;
+}
+
+/* ===== Card ===== */
+.container {
+  background: #f8f8f8;
+  width: 90%;
+  max-width: 450px;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 0 14px rgba(0, 0, 0, 0.25);
+  color: #111;
+  position: relative;
+}
+
+/* ===== Tabs ===== */
+.tab-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.tab {
+  flex: 1;
+  padding: 12px;
+  background: #364259;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: 0 5px;
+}
+
+.tab.active {
+  background: #005840;
+}
+
+.tab:not(.active):hover {
+  background: #55637f;
+}
+
+/* ===== Abas (conteúdo) ===== */
+.aba {
+  display: none;
+  animation: fade 0.4s ease;
+}
+
+.aba.active {
+  display: block;
+}
+
+@keyframes fade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Títulos ===== */
+form h2 {
+  text-align: center;
+  color: #005840;
+  margin-bottom: 20px;
+}
+
+/* ===== Formulário ===== */
+.form-group {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #222;
+}
+
+/* ===== Inputs ===== */
+input {
+  padding: 12px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  transition: 0.3s;
+}
+
+input:focus {
+  border-color: #00ffa7;
+  box-shadow: 0 0 6px #00ffa7;
+}
+
+/* ===== Termos ===== */
+.texto-termos {
+  margin: 12px 0;
+  font-size: 0.9rem;
+  line-height: 1.4rem;
+}
+
+.checkbox-termos {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+/* ===== Botão enviar ===== */
+.btn-enviar {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: #005840;
+  color: white;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.btn-enviar:hover {
+  background: #0a7f4a;
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  background-color: #364259;
+  padding: 15px;
+  color: #eafff3;
+  font-size: 0.9rem;
+  margin-top: auto;
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 480px) {
+  .tab {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .container {
+    padding: 20px;
+  }
+}
+
+
+/* Torna o form um flex container para empurrar o botão para o fim */
+form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Wrapper para garantir que o botão fique sempre no final */
+.btn-wrapper {
+  margin-top: auto;
+}
+
+/* Botão enviar (permanece igual) */
+.btn-enviar {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: #005840;
+  color: white;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+
+.btn-entrar {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: #005840;
+  color: white;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+
+.btn-enviar:hover {
+  background: #0a7f4a;
+}
+
+/* A área branca vira um container flex vertical */
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* O conteúdo do formulário cresce normal */
+form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Gruda o botão no fim da área branca */
+.btn-wrapper {
+  margin-top: auto;
+}
+
+div.tab-buttons{
+    padding-top: 20px;
+}

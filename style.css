@@ -1,0 +1,72 @@
+ 
+    body {
+      display: block;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background:#03241E;
+      color: white;
+      text-align: center;
+    }
+    header {
+      background-color: #364259;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header nav a {
+      margin: 0 12px;
+      text-decoration: none;
+      color: #dffff4;
+      font-weight: bold;
+    }
+    .hero {
+      padding: 60px 20px;
+    }
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+    }
+    
+  
+   
+    footer {
+  background-color: #364259;
+  padding: 15px;
+  color: #eafff3;
+  font-size: 0.9rem;
+
+  position: fixed; /* fixa na tela */
+  bottom: 0; /* coloca no final da janela */
+  left: 0;
+
+  width: 100%; /* cobre toda a largura */
+  z-index: 999; /* fica por cima de outros elementos */
+  margin-top: 0; /* remove a margem que empurrava ele */
+}
+
+
+
+a#form{
+   
+    background-color:#005840;
+    font-size: 32pt;
+    padding: 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    color: white;
+    transition-duration: 800ms;
+}
+
+a#form:hover{
+
+    font-size: 34pt;
+    padding: 30px;
+    transition-duration: 800ms;
+}
